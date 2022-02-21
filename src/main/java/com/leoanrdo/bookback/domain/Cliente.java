@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.leoanrdo.bookback.domain.enums.Perfil;
 
 @Entity
 public class Cliente extends Pessoa{
@@ -21,6 +22,7 @@ public class Cliente extends Pessoa{
 
 	public Cliente() {
 		super();
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public Cliente(Integer id, String nome, String usuario, String senha) {
