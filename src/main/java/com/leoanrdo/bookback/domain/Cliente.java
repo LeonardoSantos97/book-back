@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.leoanrdo.bookback.domain.dtos.ClienteDTO;
 import com.leoanrdo.bookback.domain.enums.Perfil;
 
 @Entity
@@ -29,6 +30,16 @@ public class Cliente extends Pessoa{
 		super(id, nome, usuario, senha);
 	}
 
+	public Cliente(ClienteDTO obj) {
+		super();
+		this.id = obj.getId();
+		this.nome = obj.getNome();
+		this.usuario = obj.getUsuario();
+		this.senha = obj.getSenha();
+		this.perfis = obj.getPerfis().stream().map(x -> x.getId()).collect(Collectors.toSet());
+		this.dataCriacao = obj.getDataCriacao();
+	}
+	
 	public List<Livro> getLivros() {
 		return livros;
 	}
