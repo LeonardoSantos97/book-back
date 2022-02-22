@@ -30,9 +30,9 @@ public class Livro implements Serializable{
 	@JsonFormat(pattern = "dd/mm/yyyy")
 	private LocalDate dataExclusao;
 	
-	@ManyToOne
-	@JoinColumn(name = "admin_id")
-	private Admin admin;
+//	@ManyToOne
+//	@JoinColumn(name = "admin_id")
+//	private Admin admin;
 	
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
@@ -48,7 +48,7 @@ public class Livro implements Serializable{
 		this.titulo = titulo;
 		this.autor = autor;
 		this.observacoes = observacoes;
-		this.admin = admin;
+//		this.admin = admin;
 		this.cliente = cliente;
 	}
 
@@ -100,17 +100,17 @@ public class Livro implements Serializable{
 		this.dataExclusao = dataExclusao;
 	}
 
-	public Admin getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
+//	public Admin getAdmin() {
+//		return admin;
+//	}
+//
+//	public void setAdmin(Admin admin) {
+//		this.admin = admin;
+//	}
+//
+//	public Cliente getCliente() {
+//		return cliente;
+//	}
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;

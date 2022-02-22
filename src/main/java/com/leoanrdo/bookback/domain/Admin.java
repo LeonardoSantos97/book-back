@@ -41,14 +41,7 @@ public class Admin extends Pessoa{
 		this.dataCriacao = obj.getDataCriacao();
 	}
 	
-//	public List<Admin> getAdmins() {
-//		return admins;
-//	}
-//
-//	public void setAdmins(List<Admin> admins) {
-//		this.admins = admins;
-//	}
-//	
+	
 	public List<Livro> getLivros() {
 		return livros;
 	}
