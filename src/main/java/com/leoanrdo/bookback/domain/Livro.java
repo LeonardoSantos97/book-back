@@ -107,10 +107,10 @@ public class Livro implements Serializable{
 //	public void setAdmin(Admin admin) {
 //		this.admin = admin;
 //	}
-//
-//	public Cliente getCliente() {
-//		return cliente;
-//	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
