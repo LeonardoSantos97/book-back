@@ -15,12 +15,22 @@ public class Admin extends Pessoa{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "admin")
-	private List<Admin> admins = new ArrayList<>();
+	private List<Livro> livros = new ArrayList<>();
 
 	public Admin() {
 		super();
 		addPerfil(Perfil.CLIENTE);
 	}
+	
+	
+	
+	public Admin(Integer id, String nome, String usuario, String senha) {
+		super(id, nome, usuario, senha);
+		addPerfil(Perfil.CLIENTE);
+	}
+
+
+
 	public Admin(AdminDTO obj) {
 		super();
 		this.id = obj.getId();
@@ -31,13 +41,20 @@ public class Admin extends Pessoa{
 		this.dataCriacao = obj.getDataCriacao();
 	}
 	
-	public List<Admin> getAdmins() {
-		return admins;
+//	public List<Admin> getAdmins() {
+//		return admins;
+//	}
+//
+//	public void setAdmins(List<Admin> admins) {
+//		this.admins = admins;
+//	}
+//	
+	public List<Livro> getLivros() {
+		return livros;
 	}
 
-	public void setAdmins(List<Admin> admins) {
-		this.admins = admins;
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
 	}
-	
 	
 }

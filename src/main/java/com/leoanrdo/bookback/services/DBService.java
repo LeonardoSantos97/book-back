@@ -3,14 +3,15 @@ package com.leoanrdo.bookback.services;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.leoanrdo.bookback.domain.Admin;
 import com.leoanrdo.bookback.domain.Cliente;
 import com.leoanrdo.bookback.domain.Livro;
 import com.leoanrdo.bookback.domain.enums.Perfil;
-import com.leoanrdo.bookback.repositories.AdminRepository;
-import com.leoanrdo.bookback.repositories.ClienteRepository;
+//import com.leoanrdo.bookback.repositories.AdminRepository;
+//import com.leoanrdo.bookback.repositories.ClienteRepository;
 import com.leoanrdo.bookback.repositories.LivroRepository;
 import com.leoanrdo.bookback.repositories.PessoaRepository;
 
@@ -19,12 +20,14 @@ public class DBService {
 
 	@Autowired
 	private PessoaRepository pessoaRepository;
-	@Autowired
-	private AdminRepository adminRepository;
-	@Autowired
-	private ClienteRepository clienteRepository;
-	@Autowired
+//	@Autowired
+//	private AdminRepository adminRepository;
+//	@Autowired
+//	private ClienteRepository clienteRepository;
+//	@Autowired
 	private LivroRepository livroRepository;
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	public void instaciaDB() {
 		Admin adm1 = new Admin(null, "Adm1", "adm1", encoder.encode("123"));
